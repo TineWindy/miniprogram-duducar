@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript" src="../js/jquery-3.3.1.js"></script>
+
+<script type="text/javascript">
+	function test(){
+		$.ajax({
+			type : 'post',
+			contentType : 'application/x-www-form-urlencoded',
+			beforeSend : function(req){
+				req.setRequestHeader('session','bf31be87af5b4ebac6a54623ea69548821c3d944');
+			},
+			data : {name:'hxy',schoolid : '183',dorm : 'xin7',gender : 1,telephone : '152'},
+			//data : {'name':'pbbbbbbbbb','wxid':'o9aml5JDlpH4lbb8PnNYR3OvTPoI'},
+			url : 'http://10.133.151.208:8050/User/infosubmit/',
+			success : function(res){
+				console.log("yeah!!")
+			}
+		});
+	}
+
+	test();
+</script>
+
+</body>
+</html>
