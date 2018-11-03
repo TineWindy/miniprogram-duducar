@@ -1,0 +1,4 @@
+/* pages/loadinga/loadinga.wxss */
+.text{
+  color: #ffffff
+}

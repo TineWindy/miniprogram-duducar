@@ -1,0 +1,30 @@
+<!--pages/loadingb/loadingb.wxml-->
+<view class="bgs">
+  <view classs="page__hd"></view>
+  <view class="page__bd"></view>
+  <view classs="page__hd"></view>
+  <view class="page__hd">
+    <view class="page__title text">您的计划路程已提交</view>
+    <view class="page__title text">正在为您匹配路线相似的飞驴🕊</view>
+  </view>
+  <view class="page__bd"></view>
+  <view classs="page__hd"></view>
+</view>
+
+<view class="page__hd">
+  <view class="weui-loadmore" >
+    <view class="weui-loading" ></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  <view class="page__bd"></view>
+  <view class="weui-loadmore weui-loadmore_line weui-loadmore_dot">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line"></view>
+  </view>
+  <view class="weui-cell__bd weui-text-subhead" style="text-align:center">
+    我们建议您退出小程序等待微信通知。
+  </view>
+  <view class="weui-cell__bd weui-text-subhead" style="text-align:center">
+    收到通知，请您及时处理。
+  </view>
+
+</view>

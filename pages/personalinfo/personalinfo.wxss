@@ -1,0 +1,75 @@
+/* pages/personalinfo/personalinfo.wxss */
+
+.userinfo {
+  position: relative;
+  width: 750rpx;
+  height: 320rpx;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 20rpx;
+  margin-top: 50rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.userinfo-nickname {
+  color: rgb(0, 0, 0);
+}
+
+.button-release {
+  padding-top: 15px;
+}
+
+.weui-shadow {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+}
+
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.bg-box {
+  position: relative;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.bg-box img {
+  display: block;
+  max-width: 100%;
+}
+
+.weui-position1{
+  position:fixed;
+  z-index:1;
+  margin-top: 150rpx;
+  width:90%
+}
+
+.weui-position2{
+  position:relative;
+  z-index: 2
+}
+
+.weui-sublabel{
+  font-size: 30rpx;
+  color: #999999
+}
+
+.weui-inputs{
+  font-size: 40rpx;
+  height: 100rpx;
+}

@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/reservation/reservation",
+    "pages/personalinfo/personalinfo",
+    "pages/detailinfo/detailinfo",
+    "pages/logs/logs",
+    "pages/historicalorder/historicalorder",
+    "pages/location/location",
+    "pages/me/me",
+    "pages/loadinga/loadinga",
+    "pages/loadingb/loadingb",
+    "pages/select/select"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#40AEB4",
+    "navigationBarTitleText": "咕咕飞驴",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "selectedColor": "#40AEB4",
+    "color": "#9A9FA0",
+    "borderstyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/reservation/reservation",
+        "iconPath": "images/order.png",
+        "selectedIconPath": "images/order_selected.png",
+        "backgroundColor": "#40aeb4",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me_selected.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

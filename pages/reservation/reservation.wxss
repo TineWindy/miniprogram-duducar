@@ -1,0 +1,107 @@
+/* pages/reservation/reservation.wxss */
+
+.userinfo-buttonview {
+  display: flex;
+  flex-direction: row;
+}
+
+.button-sp-area {
+  margin: 0 auto;
+  padding-top: 15px;
+  width: 80%;
+}
+
+.button-release {
+  padding-top: 15px;
+}
+
+.page__title_yipipei {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 400;
+  height: 5%;
+}
+
+page-tab, .page-tab, .page__bd-tab {
+  height: 100%;
+}
+
+.page__bd-tab {
+  padding-bottom: 0;
+}
+
+.weui-tab__content {
+  padding-top: 60px;
+  text-align: center;
+}
+
+.page-matched {
+  background-color: rgb(236, 236, 236);
+}
+
+.weui-labels {
+  width: 170rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.weui-inputs {
+  position: relative;
+  height: 2.58823529em;
+  min-height: 2.58823529em;
+  line-height: 2.58823529em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.logo {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 50rpx;
+  border-radius: 50%;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dialog-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 8;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index: 12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+
+.f{
+  display: flex;
+}
+
+.f-end{
+  justify-content: flex-end;
+}

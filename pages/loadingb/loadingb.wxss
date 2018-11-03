@@ -1,0 +1,4 @@
+/* pages/loadingb/loadingb.wxss */
+.text{
+  color: #ffffff
+}

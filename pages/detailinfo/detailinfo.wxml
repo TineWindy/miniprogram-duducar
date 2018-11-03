@@ -1,0 +1,44 @@
+<!--pages/detailinfo/detailinfo.wxml-->
+<view class="weui-cells__title"></view>
+<view class="weui-cells weui-cells_after-title weui-shadow ">
+  <view class="weui-panel__hd">订单详情</view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd weui-text-subhead">您的身份</view>
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd weui-text-subhead">出发地</view>
+
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd weui-text-subhead">目的地</view>
+
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd weui-text-subhead">车费</view>
+
+  </view>
+  <view class="weui-cell">
+    <view class="weui-cell__bd weui-text-subhead">预约时间</view>
+
+  </view>
+
+</view>
+
+
+<view class="weui-panel weui-panel_access weui-shadow">
+  <view class="weui-panel__hd">为您匹配到的同学</view>
+  <view class="weui-panel__bd">
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text weui-text-subhead">对方简介</view>
+      <view class="weui-media-box__desc ">我是一个单身狗。</view>
+    </view>
+    <view class="weui-media-box weui-media-box_text">
+      <view class="weui-media-box__title weui-media-box__title_in-text">对方留言</view>
+      <view class="weui-media-box__desc">信操见哦！</view>
+    </view>
+  </view>
+</view>
+<view class="weui-btn-area">
+  <button style="color:white; background-color: #40AEB4;" class="weui-btn" bindtap="calling">联系ta
+  </button>
+</view>

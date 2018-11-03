@@ -1,0 +1,157 @@
+<!--pages/reservation/reservation.wxml-->
+<view class='page'>
+  <view class='page__bd'>
+    <view class="page">
+      <view class="page__bd">
+        <view class="weui-tab">
+          <view class="weui-navbar">
+            <block wx:for="{{tabs}}" wx:key="*this">
+              <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                <view class="weui-navbar__title">{{item}}</view>
+              </view>
+            </block>
+            <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!--
+    <view class="userinfo">
+      <block>
+        <image class="logo" src="../../images/logo.png" mode="cover"></image>
+      </block>  
+    </view>
+    -->
+    <form bindsubmit='reservationSubmit' report-submit='true'>
+      <view class="weui-cells__title">请选择车主或乘客</view>
+      <view class="weui-cells weui-cells_after-title  weui-shadow">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">{{driverOrPassenger}}</view>
+          <view class="weui-cell__ft">
+            <switch bindchange='setDriverOrPassenger' name="identity" />
+          </view>
+        </view>
+      </view>
+
+      <view class="weui-cells__title">生成订单</view>
+      <view class="weui-cells weui-cells_after-title weui-shadow">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-labels weui-text-subhead">出发地</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input bindtap='selectDistrict' id='ORIGIN' class="weui-input" placeholder='您现在在哪儿' disabled='true' value='{{origin}}' name="origin" />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-labels weui-text-subhead">目的地</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input bindtap='selectDistrict' id='destination' class="weui-input" placeholder='您将要去哪儿' disabled='true' value='{{destination}}' name="destination" />
+          </view>
+        </view>
+
+        <!--  
+        <view class='weui-flex'>
+          <view class="weui-cell weui-cell_input weui-flex__item">
+            <view class="weui-cell__hd">
+              <view class="weui-labels weui-text-subhead">日期</view>
+            </view>
+            <view class="weui-cell__bd">
+              <picker mode="date" value="{{date}}" start="2018-01-01" end="2020-12-31" bindchange="bindDateChange">
+                <view class="weui-inputs">{{date}}</view>
+              </picker>
+            </view>
+          </view>
+
+          <view class="weui-cell weui-cell_input weui-flex__item">
+            <view class="weui-cell__hd">
+              <view class="weui-labels weui-text-subhead">时间</view>
+            </view>
+            <view class="weui-cell__bd">
+              <picker mode="time" value="{{time}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+                <view class="weui-inputs">{{time}}</view>
+              </picker>
+            </view>
+          </view>
+        </view>
+  --> 
+
+          <view class="weui-cell weui-cell_input weui-flex__item">
+            <view class="weui-cell__hd">
+              <view class="weui-labels weui-text-subhead">时间</view>
+            </view>
+            <view class="weui-cell__bd">
+              <picker mode="multiSelector" name="appointment" value="{{timevalue}}" range='{{timeSelRange}}' bindcolumnchange='bindTimeColumnChange' bindchange='bindTimeChange' bindcancel='bindTimeCancel'>
+                <view class="weui-inputs">{{appointment}}</view>
+              </picker>
+            </view>
+          </view>
+
+
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-labels weui-text-subhead">心理价位</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input bindinput='setMoney' class="weui-input" name="money" value='{{money}}' />
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-labels weui-text-subhead">备注</view>
+          </view>
+          <view class="weui-cell__bd textarea-count">
+            <textarea class="weui-textarea" style="height: 2.3em" bindinput="getWords" maxlength='{{maxTextLen}}' name="remarks" value='{{remarks}}' />
+            <view class="text-count-display f  f-end">{{textLen}}/{{maxTextLen}}</view>
+          </view>
+        </view>
+      </view>
+    
+
+      <checkbox-group bindchange="bindAgreeChange">
+        <label class="weui-agree" for="weuiAgree">
+          <view class="weui-agree__text">
+            <checkbox class="weui-agree__checkbox" id="weuiAgree" value="agree" checked="{{isAgree}}" />
+            <view class="weui-agree__checkbox-icon">
+              <icon class="weui-agree__checkbox-icon-check" type="success_no_circle" size="9" wx:if="{{isAgree}}"></icon>
+            </view>
+            阅读并同意
+            <navigator url="" class="weui-agree__link">《相关条款》</navigator>
+          </view>
+        </label>
+      </checkbox-group>
+
+      <view class='page__bd_spacing button-release'>
+        <button form-type='submit' bindtap='releaseScheduleConfirm' style="opacity: {{opacity}};color:white; background-color: #40AEB4;" disabled='{{isReleaseDisabled}}' class="weui-btn" >发布行程</button>
+      </view>
+    </form>
+
+    <!------------地址选择picker--------------->
+    <view class="dialog-mask" style="z-index:11;visibility:{{addressMenuIsShow ? 'visible': 'hidden'}}" bindtap="hideAddrSelected" />
+
+    <view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+      <view style="height:10% ;width:95%;margin-top:10rpx">
+        <text catchtap="locCancel">取消</text>
+        <text text-align="center">{{isOrigin ? '请选择出发地':'请选择目的地'}}</text>
+        <text style="float: right" catchtap="locSure">确定</text>
+      </view>
+      <!--"可以显示默认的城市，使用后级联选择城市反应很慢就不使用了-->
+      <picker-view style="width: 100%; height: 300px;" bindchange="locChange" value="{{value}}" wx:key="">
+        <picker-view-column>
+          <view wx:for="{{districts}}" class="picker-item">
+            {{item.name}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{locations}}" class="picker-item" wx:key="">
+            {{item.name}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+</view>

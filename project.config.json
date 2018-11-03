@@ -1,0 +1,77 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.5",
+	"appid": "touristappid",
+	"projectname": "Uber",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 5,
+			"list": [
+				{
+					"id": -1,
+					"name": "personalinfo",
+					"pathName": "pages/personalinfo/personalinfo",
+					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "detailinfo",
+					"pathName": "pages/detailinfo/detailinfo",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "historicalorder",
+					"pathName": "pages/historicalorder/historicalorder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "me",
+					"pathName": "pages/me/me",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "loading",
+					"pathName": "pages/loadingb/loadingb",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "select",
+					"pathName": "pages/select/select",
+					"query": ""
+				}
+			]
+		}
+	}
+}

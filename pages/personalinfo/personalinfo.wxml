@@ -1,0 +1,57 @@
+<!--pages/personalinfo/personalinfo.wxml-->
+<view class="bgs">
+  <form bindsubmit='formSubmit'>
+    <view class="weui-cells weui-cells_after-title weui-shadow weui-position1">
+      <view class="weui-top weui-cell_input">
+        <view class="weui-cell__bd">
+          <input class="weui-input" disabled='true' />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <view class="weui-sublabel">姓名</view>
+          <input name="name" class="weui-inputs" value='{{name}}' />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <view class="weui-sublabel">学号</view>
+          <input class="weui-inputs" type="number" name="schoolid" maxlength='13' value='{{schoolid}}'/>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <view class="weui-sublabel">性别</view>
+          <picker name="gender" mode="selector" bindchange="bindArrayChange" value="{{genderValue}}" range="{{array}}" range-key="{{'title'}}" >
+            <input class="weui-inputs" value='{{array[genderValue].title}}' disabled='true' />
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <view class="weui-sublabel">手机号</view>
+          <input class="weui-inputs" type="number" maxlength='11' name="telephone" value='{{telephone}}'  />
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__bd">
+          <view class="weui-sublabel">宿舍号(学部-宿舍,仅用于校验身份)</view>
+          <input class="weui-inputs" name="dorm"  value='{{dorm}}'  />
+        </view>
+      </view>
+
+      <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo='bindGetUserInfo' style="color:white; background-color: #40AEB4; margin-bottom: 15px" class="weui-btn" formType="submit">提交           </button>
+      <view wx:else>请升级微信版本</view>
+
+    </view>
+
+
+
+
+    <view class="userinfo weui-position2">
+      <view class="userinfo-avatar">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+    </view>
+  </form>
+</view>

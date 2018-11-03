@@ -1,0 +1,15 @@
+/* pages/detailinfo/detailinfo.wxss */
+
+.input {
+  border: 2px solid red;
+  border-radius: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-left: 10px;
+  height: 24px;
+}
+
+.inputView {
+  display: flex;
+  flex-direction: row;
+}
